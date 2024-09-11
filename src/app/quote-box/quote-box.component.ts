@@ -12,8 +12,8 @@ import { quotes } from '../quotes';
   
 })
 export class QuoteBoxComponent {
-  quoteText = input<string>();
-  author = input<string>();
+  quoteText = input.required<string>();
+  author = input<string>("Maggi");
   // currentQuote = quotes[randomIndex];
   // quoteText = this.currentQuote.text;
   // get author() {
