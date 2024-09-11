@@ -1,7 +1,4 @@
-import { Component, signal, computed, input } from '@angular/core';
-import { quotes } from '../quotes';
-
-// const randomIndex = Math.floor(Math.random() * quotes.length); 
+import { Component, signal, computed, input, Input } from '@angular/core';
 
 @Component({
   selector: 'app-quote-box',
@@ -12,28 +9,12 @@ import { quotes } from '../quotes';
   
 })
 export class QuoteBoxComponent {
-  quoteText = input.required<string>();
-  author = input<string>("Maggi");
-  // currentQuote = quotes[randomIndex];
-  // quoteText = this.currentQuote.text;
-  // get author() {
-  //   return '~ ' + this.currentQuote.author;
-  // }
-  
-  // randomIndex = signal(Math.floor(Math.random() * quotes.length));
-  // currentQuote = signal(quotes[this.randomIndex()]);
-  // quoteText = computed(() => this.currentQuote().text);
 
-  // author = computed(() => '~ ' + this.currentQuote().author);
+  @Input({required: true}) quoteText!: string;
+  @Input() author!: string;
 
-  // getRandomQuote() {
-  //   // const randomIndex = Math.floor(Math.random() * quotes.length);  
-  //   // this.currentQuote = quotes[randomIndex];
-  //   // this.quoteText = this.currentQuote.text;
-  
-  //   this.randomIndex.set(Math.floor(Math.random() * quotes.length));
-  //   this.currentQuote.set(quotes[this.randomIndex()]);
-  //   this.quoteText = computed(() => this.currentQuote().text);
-  // }
+  // Using signal input method to get the quoteText from the parent component
 
+  // quoteText = input.required<string>();
+  // author = input<string>("Maggi");
 }
