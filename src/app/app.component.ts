@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { QuoteBoxComponent } from './quote-box/quote-box.component';
+import { quotes } from './quotes';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,5 @@ import { QuoteBoxComponent } from './quote-box/quote-box.component';
 })
 export class AppComponent {
   title = 'echoverse';
+  quotes = quotes;
 }
