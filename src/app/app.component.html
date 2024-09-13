@@ -1,10 +1,5 @@
 <main>
-  <app-quote-box [quoteText]="quotes[0].text" [author]="quotes[0].author"/>
-  <app-quote-box [quoteText]="quotes[1].text" [author]="quotes[1].author"/>
-  <app-quote-box [quoteText]="quotes[2].text" [author]="quotes[2].author"/>
-  <app-quote-box [quoteText]="quotes[3].text" [author]="quotes[3].author"/>
-  <app-quote-box [quoteText]="quotes[4].text" [author]="quotes[4].author"/>
-  <app-quote-box [quoteText]="quotes[5].text" [author]="quotes[5].author"/>
-  <app-quote-box [quoteText]="quotes[6].text" [author]="quotes[6].author"/>
-  <app-quote-box [quoteText]="quotes[7].text" [author]="quotes[7].author"/>
+  @for(quote of quotes; track quote.id){
+    <app-quote-box [quoteText]="quote.text" [author]="quote.author"/>
+  }
 </main>
